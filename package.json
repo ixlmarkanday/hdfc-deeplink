@@ -1,0 +1,19 @@
+{
+  "name": "com.hdfcdeeplink",
+  "version": "0.0.1",
+  "description": "",
+  "cordova": {
+    "id": "com.hdfcdeeplink",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "author": "Markanday Gupta",
+  "license": "MIT"
+}
