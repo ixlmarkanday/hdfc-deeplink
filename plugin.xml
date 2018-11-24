@@ -3,7 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
     <name>HdfcDeeplink</name>
     <js-module name="HdfcDeeplink" src="www/HdfcDeeplink.js">
-        <clobbers target="HdfcDeeplink"/>
+        <clobbers target="cordova.plugins.HdfcDeeplink"/>
     </js-module>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
