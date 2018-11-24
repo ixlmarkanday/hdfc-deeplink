@@ -22,11 +22,30 @@ public class HdfcDeeplink extends CordovaPlugin {
         return false;
     }
 
-    private void coolMethod(String message, CallbackContext callbackContext) {
+    /* private void coolMethod(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
             callbackContext.success(message);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
-    }
+    } */
+
+    private void coolMethod(String message, CallbackContext callbackContext) {
+          System.out.println("Utility.getDeeplink(cordova.getContext()) "+Utility.getDeeplink(cordova.getContext()));
+            if (Utility.getDeeplink(cordova.getContext())) {
+              JSONObject jsonObject=new JSONObject();
+              try {
+                jsonObject.put("lead_no", Utility.getLead_no(cordova.getContext()));
+                jsonObject.put("agency", Utility.getAgency(cordova.getContext()));
+                jsonObject.put("emp_no", Utility.getEmp_no(cordova.getContext()));
+              }catch (Exception e)
+              {
+
+              }
+              Utility.setDeeplink(cordova.getContext(),false);
+                callbackContext.success(jsonObject.toString());
+            } else {
+                callbackContext.error("Expected one non-empty string argument.");
+            }
+        }
 }
